@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
 project(common)
-find_package(catkin REQUIRED)
-
-catkin_package()
 
 FIND_PACKAGE(catkin REQUIRED COMPONENTS 
   roscpp
@@ -70,6 +67,11 @@ else()
     message($ENV{ROS_DISTRO})
 endif()
 
+
+#############
+## Install ##
+#############
+
 if($ENV{ROS_DISTRO} STREQUAL "kinetic")
   # check OS 32bit or 64bit ?  
   if("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")
@@ -98,7 +100,19 @@ else()
     message($ENV{ROS_DISTRO})
 endif()
 
-install(DIRECTORY
-    imp bin/DRCF/config 
-    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+
+install(
+  DIRECTORY 
+    bin/DRCF/config 
+    imp 
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+#############
+## Testing ##
+#############
+
+if(CATKIN_ENABLE_TESTING)
+  find_package(rosunit REQUIRED)
+  catkin_add_nosetests(test/test_import.py)
+endif()

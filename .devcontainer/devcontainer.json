@@ -1,0 +1,30 @@
+{
+	"name": "Doosan Robot",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"remoteUser": "vscode",
+	"workspaceMount": "type=bind,source=${localWorkspaceFolder},target=${containerWorkspaceFolder}/src/doosan-robot,consistency=cached", 
+	"workspaceFolder": "/home/vscode/workspace",
+	"postCreateCommand": "rosdep update && rosdep install --from-paths src --ignore-src -y -r",
+	"capAdd": [ "SYS_PTRACE" ],
+	"securityOpt": [ "seccomp=unconfined" ],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"twxs.cmake",
+				"ms-vscode.cmake-tools"
+			],
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+					"path": "/usr/bin/bash"
+					}
+				}
+			}
+		}
+	}
+}

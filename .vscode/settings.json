@@ -3,5 +3,6 @@
         "initializer_list": "cpp",
         "xstring": "cpp",
         "xutility": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/dsr_description/config/plugin/robotiq_gazebo"
 }
