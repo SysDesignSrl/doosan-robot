@@ -417,8 +417,11 @@ namespace dsr_control{
             break;
         case STATE_SAFE_STOP:
             if (g_bHasControlAuthority) {
+                ROS_INFO("STATE_SAFE_STOP (0)");
                 Drfl.set_safe_stop_reset_type(SAFE_STOP_RESET_TYPE_DEFAULT);
-                Drfl.set_robot_control(CONTROL_RESET_SAFET_STOP);
+                ROS_INFO("STATE_SAFE_STOP (1)");
+                // Drfl.set_robot_control(CONTROL_RESET_SAFET_STOP);
+                ROS_INFO("STATE_SAFE_STOP (2)");
             }
             break;
         case STATE_SAFE_OFF:
@@ -428,7 +431,9 @@ namespace dsr_control{
             }
             break;
         case STATE_SAFE_STOP2:
-            if (g_bHasControlAuthority) Drfl.set_robot_control(CONTROL_RECOVERY_SAFE_STOP);
+            if (g_bHasControlAuthority) {
+                Drfl.set_robot_control(CONTROL_RECOVERY_SAFE_STOP);
+            }
             break;
         case STATE_SAFE_OFF2:
             if (g_bHasControlAuthority) {

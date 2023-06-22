@@ -37,7 +37,7 @@ int main(int argc, char** argv)
     ///ros::NodeHandle nh("/dsr_control");
     // Override the default ros sigint handler.
     // This must be set after the first NodeHandle is created.
-    signal(SIGINT, SigHandler);
+    // signal(SIGINT, SigHandler);
 
     //----- get param ---------------------
     int rate;
