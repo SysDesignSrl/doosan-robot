@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>dsr_launcher</name>
   <version>1.2.0</version>
   <description>dsr_launcher examples</description>
@@ -14,10 +14,18 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>roslaunch</build_depend>
-  <build_depend>gazebo_ros</build_depend>
-  <build_depend>rviz</build_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>dsr_gazebo</exec_depend>
+  <exec_depend>moveit_config_m0609</exec_depend>
+  <exec_depend>moveit_config_m0617</exec_depend>
+  <exec_depend>moveit_config_m1013</exec_depend>
+  <exec_depend>moveit_config_m1509</exec_depend>
+  <exec_depend>moveit_config_a0509</exec_depend>
+  <exec_depend>moveit_config_a0912</exec_depend>
+  <exec_depend>moveit_config_h2017</exec_depend>
+  <exec_depend>moveit_config_h2515</exec_depend>
 
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>rviz</run_depend>
+  <test_depend>rostest</test_depend>
+
 </package>

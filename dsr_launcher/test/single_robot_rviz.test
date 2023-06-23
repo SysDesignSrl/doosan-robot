@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <include file="$(find dsr_launcher)/launch/single_robot_rviz.launch">
+    <arg name="gui"  default="false"/>
+    <arg name="rviz" default="false"/>
+  </include>
+
+</launch>
