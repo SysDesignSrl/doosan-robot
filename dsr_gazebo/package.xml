@@ -20,7 +20,7 @@
   <depend>xacro</depend>
   <depend>urdf</depend>
 
-  <exec_depend>static_transform_publisher</exec_depend>
+  <exec_depend>tf</exec_depend>
   <exec_depend>dsr_description</exec_depend>
   <exec_depend>dsr_control</exec_depend>
 
