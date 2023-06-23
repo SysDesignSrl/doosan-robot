@@ -52,3 +52,12 @@ install(DIRECTORY
     imp bin/DRCF/config
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
+#############
+## Testing ##
+#############
+
+if(CATKIN_ENABLE_TESTING)
+  find_package(rosunit REQUIRED)
+  catkin_add_nosetests(test/test_import.py)
+endif()
