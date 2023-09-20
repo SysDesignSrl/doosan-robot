@@ -15,11 +15,15 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>dsr_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>actionlib</depend>
   <depend>controller_manager</depend>
   <depend>hardware_interface</depend>
   <depend>serial</depend>
-  <depend>roscpp</depend>
+  <depend>dsr_msgs</depend>
+  <depend>moveit_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>control_msgs</depend>
 
   <exec_depend>common</exec_depend>
 

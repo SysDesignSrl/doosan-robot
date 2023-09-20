@@ -3,16 +3,29 @@ project(dsr_control)
 add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED COMPONENTS
-  dsr_msgs
+  roscpp
+  actionlib
   controller_manager
   hardware_interface
   serial
-  roscpp
-  actionlib
+  dsr_msgs
+  moveit_msgs
+  trajectory_msgs
+  control_msgs
 )
+
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS dsr_msgs controller_manager hardware_interface roscpp serial
+  CATKIN_DEPENDS 
+    roscpp
+    actionlib
+    controller_manager 
+    hardware_interface 
+    serial
+    dsr_msgs 
+    moveit_msgs 
+    trajectory_msgs 
+    control_msgs
 )
 
 SET( COMMON_INC_FILES
