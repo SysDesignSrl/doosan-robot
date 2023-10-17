@@ -40,7 +40,7 @@
 	<arg unless="$(arg debug)" name="launch_prefix" value="" />
  	<arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
 
-	<node pkg="dsr_control" type="dsr_control_node" name="$(arg ns)$(arg model)" launch-prefix="$(arg launch_prefix)" respawn="true" respawn_delay="10" output="screen">
+	<node pkg="dsr_control" type="dsr_control_node" name="$(arg ns)$(arg model)" launch-prefix="$(arg launch_prefix)" required="true" output="screen">
 		<param name="name" value="$(arg ns)" />
 		<param name="rate" value="100" />
 		<param name="standby" value="5000" />
