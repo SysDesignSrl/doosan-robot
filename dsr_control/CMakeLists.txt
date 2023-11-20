@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(dsr_control)
 add_compile_options(-std=c++11)
+add_compile_options(-fsanitize=address)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
@@ -74,8 +75,8 @@ endif()
 add_executable(dsr_control_node ${SRC_FILES})
 add_dependencies(dsr_control_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(dsr_control_node ${catkin_LIBRARIES})
-target_link_libraries(dsr_control_node DRFL PocoFoundation PocoNet)
+target_link_libraries(dsr_control_node -fsanitize=address ${catkin_LIBRARIES})
+target_link_libraries(dsr_control_node -fsanitize=address DRFL PocoFoundation PocoNet)
 
 
 install(TARGETS dsr_control_node
